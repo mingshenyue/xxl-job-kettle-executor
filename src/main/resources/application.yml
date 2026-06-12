@@ -1,0 +1,36 @@
+server:
+  port: ${SERVER_PORT:9995}
+
+spring:
+  application:
+    name: lowcode-xxl-job-executor
+
+xxl:
+  job:
+    admin:
+      addresses: ${XXL_JOB_ADMIN_ADDRESSES:http://127.0.0.1:8090/api}
+    access-token: ${XXL_JOB_ACCESS_TOKEN:default_token}
+    executor:
+      appname: ${XXL_JOB_EXECUTOR_APPNAME:default}
+      address: ${XXL_JOB_EXECUTOR_ADDRESS:}
+      ip: ${XXL_JOB_EXECUTOR_IP:}
+      port: ${XXL_JOB_EXECUTOR_PORT:9998}
+      log-path: ${XXL_JOB_EXECUTOR_LOG_PATH:./logs/xxl-job}
+      log-retention-days: ${XXL_JOB_EXECUTOR_LOG_RETENTION_DAYS:30}
+
+kettle:
+  home: ${KETTLE_HOME:E:/data/kettle}
+  repository:
+    username: ${KETTLE_REPOSITORY_USERNAME:admin}
+    password: ${KETTLE_REPOSITORY_PASSWORD:admin}
+    db:
+      type: ${KETTLE_REPOSITORY_DB_TYPE:MySQL}
+      host: ${KETTLE_REPOSITORY_DB_HOST:172.18.20.120}
+      port: ${KETTLE_REPOSITORY_DB_PORT:3308}
+      database: ${KETTLE_REPOSITORY_DB_DATABASE:dev4_kettle}
+      username: ${KETTLE_REPOSITORY_DB_USERNAME:root}
+      password: ${KETTLE_REPOSITORY_DB_PASSWORD:mvp51.Com}
+    pool:
+      max-total: ${KETTLE_REPOSITORY_POOL_MAX_TOTAL:5}
+      max-idle: ${KETTLE_REPOSITORY_POOL_MAX_IDLE:5}
+      min-idle: ${KETTLE_REPOSITORY_POOL_MIN_IDLE:1}
